@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        @font-face {
+            font-family: Liberation-Sans;
+            src: url("LiberationSans-Regular.ttf");
+        }
+
+        body{
+            background-color: #EAF2EF;
+            font-family: Liberation-Sans, sans-serif;
+            color: #46494C;
+        }
+        h1{
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        #canvas{
+            border: 2px solid #46494C;
+            margin-left: -2px;
+            margin-top: -2px;
+        }
+        #mainDiv{
+            width: 800px;
+            text-align: center;
+            display: block;
+            margin: auto;
+        }
+        #cont{
+            position: relative;
+        }
+        #divMenue{
+            width: 800px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #controls{
+            width: 800px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .control{
+            position: absolute;
+            top: 0;
+            font-size: 10pt;
+        }
+    </style>
+</head>
+<body>
+<div id="mainDiv">
+    <h1>Tanks!</h1>
+    <div id="cont">
+        <canvas id="canvas" width="800" height="400"></canvas>
+        <div id="divMenue">
+            <div>
+                <table style="margin: auto">
+                    <tr><td>Spiller 1: <input id="inpName1" type="text" size="10" value="Spiller 1"><input id="inpColor1" type="color" value="#56B6FF"></td></tr>
+                    <tr><td>Spiller 2: <input id="inpName2" type="text" size="10" value="Spiller 2"><input id="inpColor2" type="color" value="#6B0504"></td></tr>
+                    <tr><td><button id="btnStart">Start</button></td></tr>
+                    <tr><td><button id="btnNyBane">Ny bane</button></td></tr>
+                </table>
+            </div>
+            <div style="display: none">
+                <p></p>
+                <button onclick="window.location.reload()">Start på nytt!</button>
+            </div>
+
+        </div>
+        <div id="controls" style="display: none;">
+            <div class="control" style="left:25%">
+                Name: <span></span><br>
+                Health: <span></span><br>
+                Fuel: <span></span><br>
+                Power: <span></span><br>
+                <input type="range" min="0" max="100" value="0" style="width: 70px;"><br>
+                Bullet: <span></span>
+            </div>
+            <div class="control" style="right:25%">
+                Name: <span></span><br>
+                Health: <span></span><br>
+                Fuel: <span></span><br>
+                Power: <span></span><br>
+                <input type="range" min="0" max="100" value="0" style="width: 70px;"><br>
+                Bullet: <span></span>
+            </div>
+        </div>
+    </div>
+</div>
+<canvas id="tmpCanvas" style="display: none;"></canvas>
+<script src="map.js" type="text/javascript"></script>
+<script src="tanks.js" type="text/javascript"></script>
+<script src="script.js" type="text/javascript"></script>
+</body>
+</html>
